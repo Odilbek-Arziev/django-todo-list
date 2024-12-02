@@ -62,4 +62,4 @@ def filter_todos(request):
 
 def finish_all_todos(request):
     Todo.objects.all().order_by("-id").delete()
-    return redirect('/app/todos')
+    return redirect("/app/todos/")
