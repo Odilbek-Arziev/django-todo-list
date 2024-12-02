@@ -60,6 +60,5 @@ def filter_todos(request):
     return render(request, "todos.html", {"todos": todos_list})
 
 def finish_all_todos(request):
-    Todo.objects.all.order_by("-id").delete()
-    
-    return redirect('/app/todos')
+    Todo.objects.all().order_by("-id").delete()
+    return redirect("/app/todos/")
